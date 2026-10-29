@@ -139,8 +139,13 @@
       "id": "hostinger",
       "kind": "account",
       "required": false,
-      "probe": null,
-      "note": "Account connector named 'Hostinger Connector'. Its tools were not visible when it was added (not connected yet), so no probe is chosen. Once connected, set a read-only list call as the probe; until then report present as 🟡 or ⚪."
+      "probe": "execute",
+      "args": {
+        "operation": "domains_portfolio_list",
+        "params": {}
+      },
+      "report_only": "whether it responded and how many domains came back, never their names",
+      "note": "Account connector named 'Hostinger Connector'. It exposes only search, execute and multi-execute; the probe is the read-only operation domains_portfolio_list run through execute. Never run an operation whose search result is not readOnly."
     },
     {
       "id": "claude-in-chrome",
