@@ -69,6 +69,13 @@
       "probe": "health_check"
     },
     {
+      "id": "macos-mcp",
+      "kind": "local",
+      "required": false,
+      "probe": null,
+      "note": "Drives the Mac desktop (apps, clicks, typing, shell, screenshots). No probe that is safe and free of side effects; report present as 🟡. Never call it from the doctor."
+    },
+    {
       "id": "read-and-send-imessages",
       "kind": "native",
       "required": false,
