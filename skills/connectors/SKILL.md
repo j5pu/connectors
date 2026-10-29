@@ -64,3 +64,9 @@ A compact `AUDITORÍA DE CONECTORES` (or the equivalent title in the user's lang
 - no recommendation to install or change anything unless the user asks.
 
 Do not write a report file. The result belongs in the conversation.
+
+## References
+
+- `references/whatsapp-update.md`: the update procedure.
+- `references/whatsapp-monitor.md`: bridge, token and monitor notes, for when a WhatsApp probe or update shows something unexpected.
+- `references/platforms.md`: tool names and routing for Codex, Claude and ChatGPT Work.
