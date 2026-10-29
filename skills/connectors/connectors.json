@@ -136,6 +136,13 @@
       "report_only": "whether it responded, never project names or ids"
     },
     {
+      "id": "hostinger",
+      "kind": "account",
+      "required": false,
+      "probe": null,
+      "note": "Account connector named 'Hostinger Connector'. Its tools were not visible when it was added (not connected yet), so no probe is chosen. Once connected, set a read-only list call as the probe; until then report present as 🟡 or ⚪."
+    },
+    {
       "id": "claude-in-chrome",
       "kind": "extension",
       "required": false,
