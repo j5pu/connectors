@@ -1,0 +1,9 @@
+{
+  "name": "connectors",
+  "version": "1.0.0",
+  "description": "Lists and diagnoses the MCPs and connectors you rely on (connectors, connectors doctor) and updates the local WhatsApp connector (connectors update).",
+  "author": {
+    "name": "j5pu"
+  },
+  "license": "MIT"
+}

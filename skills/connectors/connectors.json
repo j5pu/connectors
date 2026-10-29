@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "whatsapp_checkout": "/Users/j5pu/Documents/GitHub/whatsapp-mcp",
+  "whatsapp_remote": "https://github.com/verygoodplugins/whatsapp-mcp",
+  "states": {
+    "ok": "🟢 operativo",
+    "unverifiable": "🟡 presente pero no verificable",
+    "absent": "⚪ no disponible",
+    "error": "🔴 con error"
+  },
+  "connectors": [
+    { "id": "apple-mail", "kind": "local", "required": true, "probe": "health_check" },
+    {
+      "id": "icloud-mcp",
+      "kind": "local",
+      "required": true,
+      "probe": "check_auth_status",
+      "extra": "iMessage: set_mode(local), list_chats with limit 1, and always set_mode(cloud) at the end or after an error. Do not report the chat or its preview."
+    },
+    { "id": "iwork-mcp", "kind": "local", "required": true, "probe": "numbers_list_documents", "report_only": "whether it responded, never document names" },
+    { "id": "whatsapp", "kind": "local", "required": true, "probe": "list_chats", "args": { "limit": 1, "include_last_message": false }, "report_only": "whether it responded, never chat names or identifiers", "update": true },
+    { "id": "desktop-commander", "kind": "local", "required": true, "probe": "get_config", "report_only": "whether it responded, never paths or system details" },
+    { "id": "filesystem", "kind": "local", "required": true, "probe": "list_allowed_directories", "report_only": "whether it responded and how many directories, never their names" },
+    { "id": "mcp-server-linkedin", "kind": "local", "required": false, "probe": null, "note": "No probe that is safe and free of side effects on LinkedIn; report present as 🟡." },
+    { "id": "odoo", "kind": "local", "required": false, "probe": "health_check" },
+    { "id": "read-and-send-imessages", "kind": "native", "required": false, "probe": null, "note": "Claude native connector. Never read a conversation just to prove health; report present as 🟡 unless it offers a status call." },
+    { "id": "microsoft-365", "kind": "account", "required": false, "probe": "get_me", "report_only": "whether it responded" },
+    { "id": "zoho-crm", "kind": "account", "required": false, "probe": "getOrganization", "report_only": "whether it responded" },
+    { "id": "twenty", "kind": "account", "required": false, "probe": "list_object_metadata_names", "report_only": "whether it responded" },
+    { "id": "snov-io", "kind": "account", "required": false, "probe": "app_get_user_info", "report_only": "whether it responded; never use a probe that spends credits" },
+    { "id": "jurisprudenciator", "kind": "account", "required": false, "probe": "estado", "report_only": "whether it responded" },
+    { "id": "claude-in-chrome", "kind": "extension", "required": false, "probe": "list_connected_browsers", "report_only": "whether a browser is connected" }
+  ]
+}

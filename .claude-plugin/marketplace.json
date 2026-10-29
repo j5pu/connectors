@@ -1,0 +1,7 @@
+{
+  "name": "connectors",
+  "owner": { "name": "j5pu" },
+  "plugins": [
+    { "name": "connectors", "source": "./" }
+  ]
+}
