@@ -76,6 +76,14 @@
       "note": "Drives the Mac desktop (apps, clicks, typing, shell, screenshots). No probe that is safe and free of side effects; report present as 🟡. Never call it from the doctor."
     },
     {
+      "id": "lightpanda",
+      "kind": "local",
+      "required": false,
+      "probe": "getEnv",
+      "report_only": "whether it responded; never env names or values",
+      "note": "Headless browser (binary /opt/homebrew/bin/lightpanda, stdio). getEnv without arguments only lists LP_* variable names and is side-effect free. Never navigate to a URL from the doctor."
+    },
+    {
       "id": "read-and-send-imessages",
       "kind": "native",
       "required": false,
