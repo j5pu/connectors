@@ -58,27 +58,27 @@
     {
       "id": "mcp-server-linkedin",
       "kind": "local",
-      "required": false,
+      "required": true,
       "probe": null,
       "note": "No probe that is safe and free of side effects on LinkedIn; report present as 🟡."
     },
     {
       "id": "odoo",
       "kind": "local",
-      "required": false,
+      "required": true,
       "probe": "health_check"
     },
     {
       "id": "macos-mcp",
       "kind": "local",
-      "required": false,
+      "required": true,
       "probe": null,
       "note": "Drives the Mac desktop (apps, clicks, typing, shell, screenshots). No probe that is safe and free of side effects; report present as 🟡. Never call it from the doctor."
     },
     {
       "id": "lightpanda",
       "kind": "local",
-      "required": false,
+      "required": true,
       "probe": "getEnv",
       "report_only": "whether it responded; never env names or values",
       "note": "Headless browser (binary /opt/homebrew/bin/lightpanda, stdio). getEnv without arguments only lists LP_* variable names and is side-effect free. Never navigate to a URL from the doctor."
@@ -86,57 +86,64 @@
     {
       "id": "read-and-send-imessages",
       "kind": "native",
-      "required": false,
+      "required": true,
       "probe": null,
       "note": "Claude native connector. Never read a conversation just to prove health; report present as 🟡 unless it offers a status call."
     },
     {
       "id": "microsoft-365",
       "kind": "account",
-      "required": false,
+      "required": true,
       "probe": "get_me",
       "report_only": "whether it responded"
     },
     {
       "id": "zoho-crm",
       "kind": "account",
-      "required": false,
+      "required": true,
       "probe": "getOrganization",
       "report_only": "whether it responded"
     },
     {
       "id": "twenty",
       "kind": "account",
-      "required": false,
+      "required": true,
       "probe": "list_object_metadata_names",
       "report_only": "whether it responded"
     },
     {
       "id": "snov-io",
       "kind": "account",
-      "required": false,
+      "required": true,
       "probe": "app_get_user_info",
       "report_only": "whether it responded; never use a probe that spends credits"
     },
     {
       "id": "jurisprudenciator",
       "kind": "account",
-      "required": false,
+      "required": true,
       "probe": "estado",
       "report_only": "whether it responded"
     },
     {
       "id": "cloudflare",
       "kind": "account",
-      "required": false,
+      "required": true,
       "probe": "whoami",
       "report_only": "whether it responded, never the account id or email",
-      "note": "Full Cloudflare API server (https://mcp.cloudflare.com/mcp), used for DNS. The older 'Cloudflare Developer Platform' connector is deprecated and has no DNS tools: report it as present but obsolete if it shows up."
+      "note": "Full Cloudflare API server (https://mcp.cloudflare.com/mcp), used for DNS. Account connector named 'CLoudFlare'."
+    },
+    {
+      "id": "cloudflare-developer-platform",
+      "kind": "account",
+      "required": true,
+      "probe": null,
+      "note": "Account connector named 'Cloudflare Developer Platform'. It has no DNS tools. No probe is defined; report present as 🟡. Never call it from the doctor."
     },
     {
       "id": "vercel",
       "kind": "account",
-      "required": false,
+      "required": true,
       "probe": "list_projects",
       "args": {
         "limit": "1"
@@ -146,7 +153,7 @@
     {
       "id": "hostinger",
       "kind": "account",
-      "required": false,
+      "required": true,
       "probe": "execute",
       "args": {
         "operation": "domains_portfolio_list",
@@ -156,9 +163,16 @@
       "note": "Account connector named 'Hostinger Connector'. It exposes only search, execute and multi-execute; the probe is the read-only operation domains_portfolio_list run through execute. Never run an operation whose search result is not readOnly."
     },
     {
+      "id": "mongodb-atlas",
+      "kind": "account",
+      "required": true,
+      "probe": null,
+      "note": "Account connector named 'MongoDB Atlas'; it can read and write cluster data. No probe is defined; report present as 🟡. Never call it from the doctor."
+    },
+    {
       "id": "vultr",
       "kind": "account",
-      "required": false,
+      "required": true,
       "probe": "vultr_account_get",
       "report_only": "whether it responded, never the account name, email or balance",
       "note": "Account connector named 'Vultr'. The server is read-only; vultr_account_get takes no arguments."
@@ -166,7 +180,7 @@
     {
       "id": "claude-in-chrome",
       "kind": "extension",
-      "required": false,
+      "required": true,
       "probe": "list_connected_browsers",
       "report_only": "whether a browser is connected"
     }

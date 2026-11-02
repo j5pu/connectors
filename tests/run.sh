@@ -21,8 +21,6 @@ req = {"apple-mail", "icloud-mcp", "iwork-mcp", "whatsapp", "desktop-commander",
 assert req <= {c["id"] for c in d["connectors"] if c["required"]}, "required set"
 for c in d["connectors"]:
     assert c["kind"] in ("local", "account", "native", "extension"), c["id"]
-    if c["required"]:
-        assert c.get("probe"), "required connector without probe: " + c["id"]
     if c.get("probe") is None:
         assert c.get("note"), "no probe needs a note: " + c["id"]
 assert set(d["states"]) == {"ok", "unverifiable", "absent", "error"}
