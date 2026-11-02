@@ -159,8 +159,9 @@
       "id": "vultr",
       "kind": "account",
       "required": false,
-      "probe": null,
-      "note": "Account connector named 'Vultr'. No safe read-only probe is defined; report present as 🟡. Never call it from the doctor."
+      "probe": "vultr_account_get",
+      "report_only": "whether it responded, never the account name, email or balance",
+      "note": "Account connector named 'Vultr'. The server is read-only; vultr_account_get takes no arguments."
     },
     {
       "id": "claude-in-chrome",
