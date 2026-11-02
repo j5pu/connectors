@@ -156,6 +156,13 @@
       "note": "Account connector named 'Hostinger Connector'. It exposes only search, execute and multi-execute; the probe is the read-only operation domains_portfolio_list run through execute. Never run an operation whose search result is not readOnly."
     },
     {
+      "id": "vultr",
+      "kind": "account",
+      "required": false,
+      "probe": null,
+      "note": "Account connector named 'Vultr'. No safe read-only probe is defined; report present as 🟡. Never call it from the doctor."
+    },
+    {
       "id": "claude-in-chrome",
       "kind": "extension",
       "required": false,
